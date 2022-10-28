@@ -12,19 +12,21 @@ import java.io.IOException;
 
                 // use switch to determine action based on input
                 switch (args[2]) {
-                    case "grayscale":
-                        bitMapFromFile.convertToGrayScale();
+                    case "greyscale":
+                        bitMapFromFile.convertToGreyScale();
                         break;
-                    case "negative":
+                    case "invert":
                         bitMapFromFile.convertToNegative();
                         break;
-                    case "transparent":
-                        bitMapFromFile.convertToTransparent();
+                    case "whitetored":
+                        bitMapFromFile.convertWhiteToRed();
                         break;
                     default:
-                        System.out.println("error");;
+                        System.out.println("Did not recognize action");;
                 }
 
                 bitMapFromFile.write(args[1]);
             }
         }
+
+// main ref for how to start https://github.com/SharinaS/bitmap-transformer
